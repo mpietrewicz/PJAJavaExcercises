@@ -8,6 +8,10 @@ import java.util.HashMap;
 public class PriceList {
     HashMap<String, Double> priceList = new HashMap<String, Double>();
 
+    public static PriceList getInstance() {
+        return new PriceList();
+    }
+
     public void put(String flowerName, double price) {
         priceList.put(flowerName, price);
     }
