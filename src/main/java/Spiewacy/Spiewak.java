@@ -18,11 +18,27 @@ public abstract class Spiewak {
 
     @Override
     public String toString() {
-        return "(" + numerStartowy + ") " + nazwisko;
+        return "(" +numerStartowy +") " +nazwisko +": " +spiewaj();
     }
 
     static public Spiewak najglosniej(Spiewak[] spiewacy) {
-        return spiewacy[0];
+
+        Spiewak najglosniejszySpiewak = spiewacy[0];
+        int maxLiczbaDuzychLiter = 0;
+        for (Spiewak spiewak : spiewacy) {
+            int liczbaDuzychLiter = 0;
+            for (char c : spiewak.spiewaj().toCharArray()) {
+                if (new Character(c).isUpperCase(c)) {
+                    liczbaDuzychLiter++;
+                }
+            }
+            if (liczbaDuzychLiter > maxLiczbaDuzychLiter) {
+                maxLiczbaDuzychLiter = liczbaDuzychLiter;
+                najglosniejszySpiewak = spiewak;
+            }
+        }
+
+        return najglosniejszySpiewak;
     }
 
 
