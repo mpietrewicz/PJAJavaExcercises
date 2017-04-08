@@ -17,7 +17,7 @@ class Rose extends Flower{
     public Rose(int count) {
         super(count);
         super.name = "róża";
-        super.color = "czerwona";
+        super.color = "czerwony";
     }
 }
 
@@ -25,7 +25,7 @@ class Peony extends Flower{
     public Peony(int count) {
         super(count);
         super.name = "piwonia";
-        super.color = "czerwona";
+        super.color = "czerwony";
     }
 }
 

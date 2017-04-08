@@ -20,17 +20,27 @@ public class Customer {
         public void del(Flower flower) {
             flowers.remove(flower);
         }
+        public void erase() {
+            flowers = null;
+        }
 
         @Override
         public String toString() {
             String shoppingCartItems = "Wózek właściciel " +name +"\n";
-            for (Flower flower : flowers) {
-                shoppingCartItems += flower.name +", kolor: " +flower.color +", ilość " +flower.count
-                +", cena " +PriceList.getPrice(flower.name) +"\n";
+            if(flowers.isEmpty()) {
+                shoppingCartItems = "-- pusto";
+            }
+            else {
+                for (Flower flower : flowers) {
+                    shoppingCartItems += flower.name +", kolor: " +flower.color +", ilość " +flower.count
+                            +", cena " +PriceList.getPrice(flower.name) +"\n";
+                }
             }
             return shoppingCartItems;
         }
     };
+
+
 
     public Customer(String name, int money) {
         this.name = name;
@@ -64,6 +74,8 @@ public class Customer {
         return cash;
     }
 
-    public void pack(Box pudelkoJanka) {
+    public void pack(Box box) {
+        box.set(shoppingCart.get());
+//        shoppingCart.erase();
     }
 }

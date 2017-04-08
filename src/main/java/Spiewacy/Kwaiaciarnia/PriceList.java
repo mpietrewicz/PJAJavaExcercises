@@ -29,4 +29,16 @@ public class PriceList {
             return -1.0;
         }
     }
+
+    public static Double valueOf(Box box, String color) {
+        Double value = 0.0;
+        for (Flower item : box.items) {
+            if(item.color == color) {
+                if(priceList.containsKey(item.name)) {
+                    value = value + priceList.get(item.name) * item.count;
+                }
+            }
+        }
+        return value;
+    }
 }

@@ -1,5 +1,7 @@
 package Spiewacy.Kwaiaciarnia;
 
+import static Spiewacy.Kwaiaciarnia.PriceList.valueOf;
+
 /**
  * Created by Marek on 2017-04-06.
  */
@@ -44,23 +46,24 @@ public class FloristsTest {
         // a co w pudełku
         System.out.println(pudelkoJanka);
         // Zobaczmy jaka jest wartość czerwonych kwiatów w pudełku Janka
-//        System.out.println("Czerwone kwiaty w pudełku Janka kosztowały: "
-//                        + valueOf(pudelkoJanka, "czerwony"));
-//        // Teraz przychodzi Stefan
-//        // ma tylko 60 zł
-//        Customer stefan = new Customer("Stefan", 60);
-//        // Ale nabrał kwiatów nieco za dużo jak na tę sumę
-//        stefan.get(new Lilac(3));
-//        stefan.get(new Rose(5));
-//        // co ma w wózku
-//        System.out.println(stefan.getShoppingCart());
-//        // płaci i pakuje do pudełka
-//        stefan.pay();
-//        Box pudelkoStefana = new Box(stefan);
-//        stefan.pack(pudelkoStefana);
-//        // co ostatecznie udało mu się kupić
-//        System.out.println(pudelkoStefana);
-//        // ... i ile zostało mu pieniędzy
-//        System.out.println("Stefanowi zostało : " + stefan.getCash() + " zł");
+        System.out.println("Czerwone kwiaty w pudełku Janka kosztowały: " + valueOf(pudelkoJanka, "czerwony"));
+        // Teraz przychodzi Stefan
+        // ma tylko 60 zł
+        Customer stefan = new Customer("Stefan", 60);
+        // Ale nabrał kwiatów nieco za dużo jak na tę sumę
+        stefan.get(new Lilac(3));
+        stefan.get(new Rose(5));
+        // co ma w wózku
+        System.out.println(stefan.getShoppingCart());
+        // płaci i pakuje do pudełka
+        stefan.pay();
+        Box pudelkoStefana = new Box(stefan);
+        stefan.pack(pudelkoStefana);
+        // co ostatecznie udało mu się kupić
+        System.out.println(pudelkoStefana);
+        // ... i ile zostało mu pieniędzy
+        System.out.println("Stefanowi zostało : " + stefan.getCash() + " zł");
     }
+
+
 }

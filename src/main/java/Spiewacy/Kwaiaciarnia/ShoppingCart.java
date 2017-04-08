@@ -12,4 +12,6 @@ public abstract class ShoppingCart {
     public abstract ArrayList<Flower> get();
 
     public abstract void del(Flower flower);
+
+    public abstract void erase();
 }
