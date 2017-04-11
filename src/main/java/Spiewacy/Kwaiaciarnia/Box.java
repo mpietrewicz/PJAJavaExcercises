@@ -16,6 +16,9 @@ public class Box {
     public void set(ArrayList<Flower> items) {
         this.items = items;
     }
+    public ArrayList<Flower> get() {
+        return items;
+    }
 
     @Override
     public String toString() {

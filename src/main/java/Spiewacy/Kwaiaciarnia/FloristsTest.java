@@ -6,10 +6,18 @@ import static Spiewacy.Kwaiaciarnia.PriceList.valueOf;
  * Created by Marek on 2017-04-06.
  */
 public class FloristsTest {
-//    // definicja metody sumowania wartosci kwiatów o podanym kolorze
-//    static int valueOf(Box box, String color) {
-// /*<- tu trzeba wpisac kod metody */
-//    }
+    // definicja metody sumowania wartosci kwiatów o podanym kolorze
+    static int valueOf(Box box, String color) {
+ /*<- tu trzeba wpisac kod metody */
+        double value = 0;
+        for (Flower flower : box.get()) {
+            if(flower.color == color) {
+                value = value + (flower.count * PriceList.getPrice(flower.name));
+            }
+        }
+
+        return (int) value;
+    }
     public static void main(String[] args) {
         // Kwiaciarnia samoobsługowa
         // ustalenie cennika

@@ -45,3 +45,11 @@ class Lilac extends Flower{
     }
 }
 
+class Cloves extends Flower{
+    public Cloves(int count) {
+        super(count);
+        super.name = "gozdziki";
+        super.color = "biały";
+    }
+}
+
