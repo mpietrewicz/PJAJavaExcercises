@@ -10,7 +10,7 @@ public class FloristsTest {
  /*<- tu trzeba wpisac kod metody */
         double value = 0;
         for (Flower flower : box.get()) {
-            if(flower.color == color) {
+            if(flower.color.equals(color)) {
                 value = value + (flower.count * PriceList.getInstance().getPrice(flower.name));
             }
         }

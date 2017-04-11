@@ -6,10 +6,10 @@ import java.util.ArrayList;
  * Created by Marek on 2017-04-06.
  */
 public class Customer {
-    protected String name;
-    protected int cash;
-    protected ShoppingCart shoppingCart = new ShoppingCart() {
-        public ArrayList<Flower> flowers = new ArrayList<Flower>();
+    String name;
+    private int cash;
+    private ShoppingCart shoppingCart = new ShoppingCart() {
+        ArrayList<Flower> flowers = new ArrayList<Flower>();
 
         public void set(Flower flower) {
             flowers.add(flower);
@@ -42,20 +42,20 @@ public class Customer {
 
 
 
-    public Customer(String name, int money) {
+    Customer(String name, int money) {
         this.name = name;
         this.cash = money;
     }
 
-    public void get(Flower flower) {
+    void get(Flower flower) {
         shoppingCart.set(flower);
     }
 
-    public ShoppingCart getShoppingCart() {
+    ShoppingCart getShoppingCart() {
         return shoppingCart;
     }
 
-    public void pay() {
+    void pay() {
         ArrayList<Flower> flowersInShoppingCart = (ArrayList<Flower>) shoppingCart.get().clone();
         for (Flower flower : flowersInShoppingCart) {
             if(PriceList.getInstance().getPrice(flower.name) == -1.0) {
@@ -76,6 +76,5 @@ public class Customer {
 
     public void pack(Box box) {
         box.set(shoppingCart.get());
-//        shoppingCart.erase();
     }
 }

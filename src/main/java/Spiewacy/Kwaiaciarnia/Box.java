@@ -6,17 +6,17 @@ import java.util.ArrayList;
  * Created by Marek on 2017-04-06.
  */
 public class Box {
-    protected Customer customer = null;
-    protected ArrayList<Flower> items = null;
+    private Customer customer = null;
+    private ArrayList<Flower> items = null;
 
-    public Box(Customer customer) {
+    Box(Customer customer) {
         this.customer = customer;
     }
 
-    public void set(ArrayList<Flower> items) {
+    void set(ArrayList<Flower> items) {
         this.items = items;
     }
-    public ArrayList<Flower> get() {
+    ArrayList<Flower> get() {
         return items;
     }
 

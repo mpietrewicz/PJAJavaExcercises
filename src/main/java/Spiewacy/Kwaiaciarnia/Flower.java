@@ -3,18 +3,18 @@ package Spiewacy.Kwaiaciarnia;
 /**
  * Created by Marek on 2017-04-06.
  */
-public class Flower {
-    protected String name;
-    protected String color;
-    protected int count;
+class Flower {
+    String name;
+    String color;
+    int count;
 
-    public Flower(int count) {
+    Flower(int count) {
         this.count = count;
     }
 }
 
 class Rose extends Flower{
-    public Rose(int count) {
+    Rose(int count) {
         super(count);
         super.name = "róża";
         super.color = "czerwony";
@@ -22,7 +22,7 @@ class Rose extends Flower{
 }
 
 class Peony extends Flower{
-    public Peony(int count) {
+    Peony(int count) {
         super(count);
         super.name = "piwonia";
         super.color = "czerwony";
@@ -30,7 +30,7 @@ class Peony extends Flower{
 }
 
 class Freesia extends Flower{
-    public Freesia(int count) {
+    Freesia(int count) {
         super(count);
         super.name = "frezja";
         super.color = "żółty";
@@ -38,7 +38,7 @@ class Freesia extends Flower{
 }
 
 class Lilac extends Flower{
-    public Lilac(int count) {
+    Lilac(int count) {
         super(count);
         super.name = "bez";
         super.color = "biały";
