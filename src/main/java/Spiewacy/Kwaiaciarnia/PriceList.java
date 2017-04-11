@@ -9,9 +9,9 @@ public class PriceList {
     private PriceList() {
     }
 
-    static public HashMap<String, Double> priceList = new HashMap<String, Double>();
+    public HashMap<String, Double> priceList = new HashMap<String, Double>();
 
-    static private PriceList instance = new PriceList();
+    private static PriceList instance = new PriceList();
 
     public static PriceList getInstance() {
         return instance;
@@ -21,24 +21,12 @@ public class PriceList {
         priceList.put(flowerName, price);
     }
 
-    public static Double getPrice(String flowerName) {
-        if (priceList.containsKey(flowerName)) {
-            return priceList.get(flowerName);
+    public Double getPrice(String flowerName) {
+        if (instance.priceList.containsKey(flowerName)) {
+            return instance.priceList.get(flowerName);
         }
         else {
             return -1.0;
         }
-    }
-
-    public static Double valueOf(Box box, String color) {
-        Double value = 0.0;
-        for (Flower item : box.items) {
-            if(item.color == color) {
-                if(priceList.containsKey(item.name)) {
-                    value = value + priceList.get(item.name) * item.count;
-                }
-            }
-        }
-        return value;
     }
 }

@@ -1,6 +1,5 @@
 package Spiewacy.Kwaiaciarnia;
 
-import static Spiewacy.Kwaiaciarnia.PriceList.valueOf;
 
 /**
  * Created by Marek on 2017-04-06.
@@ -12,7 +11,7 @@ public class FloristsTest {
         double value = 0;
         for (Flower flower : box.get()) {
             if(flower.color == color) {
-                value = value + (flower.count * PriceList.getPrice(flower.name));
+                value = value + (flower.count * PriceList.getInstance().getPrice(flower.name));
             }
         }
 

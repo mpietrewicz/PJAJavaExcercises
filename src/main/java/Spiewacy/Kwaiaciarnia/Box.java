@@ -29,7 +29,7 @@ public class Box {
         else {
             for (Flower item : items) {
                 shoppingCartItems += item.name +", kolor: " +item.color +", ilość " +item.count
-                        +", cena " +PriceList.getPrice(item.name) +"\n";
+                        +", cena " +PriceList.getInstance().getPrice(item.name) +"\n";
             }
         }
         return shoppingCartItems;

@@ -33,7 +33,7 @@ public class Customer {
             else {
                 for (Flower flower : flowers) {
                     shoppingCartItems += flower.name +", kolor: " +flower.color +", ilość " +flower.count
-                            +", cena " +PriceList.getPrice(flower.name) +"\n";
+                            +", cena " +PriceList.getInstance().getPrice((flower.name)) +"\n";
                 }
             }
             return shoppingCartItems;
@@ -58,14 +58,14 @@ public class Customer {
     public void pay() {
         ArrayList<Flower> flowersInShoppingCart = (ArrayList<Flower>) shoppingCart.get().clone();
         for (Flower flower : flowersInShoppingCart) {
-            if(PriceList.getPrice(flower.name) == -1.0) {
+            if(PriceList.getInstance().getPrice(flower.name) == -1.0) {
                 shoppingCart.del(flower);
             }
-            else if ((double) cash < PriceList.getPrice(flower.name) * flower.count) {
+            else if ((double) cash < PriceList.getInstance().getPrice(flower.name) * flower.count) {
                 shoppingCart.del(flower);
             }
             else {
-                cash = (int) (cash - PriceList.getPrice(flower.name) * flower.count);
+                cash = (int) (cash - PriceList.getInstance().getPrice(flower.name) * flower.count);
             }
         }
     }
