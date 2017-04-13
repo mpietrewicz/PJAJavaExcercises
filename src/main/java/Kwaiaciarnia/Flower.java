@@ -1,4 +1,4 @@
-package Spiewacy.Kwaiaciarnia;
+package Kwaiaciarnia;
 
 /**
  * Created by Marek on 2017-04-06.

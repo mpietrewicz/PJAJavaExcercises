@@ -1,4 +1,4 @@
-package Spiewacy.Kwaiaciarnia;
+package Kwaiaciarnia;
 
 import java.util.ArrayList;
 
